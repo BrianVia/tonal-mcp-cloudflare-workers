@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tonal-mcp",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-12",
+  "observability": { "enabled": true },
+  "durable_objects": {
+    "bindings": [{ "name": "TONAL_SESSION", "class_name": "TonalSession" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["TonalSession"] }],
+  "routes": [{ "pattern": "tonal.example.com", "custom_domain": true }]
+}
